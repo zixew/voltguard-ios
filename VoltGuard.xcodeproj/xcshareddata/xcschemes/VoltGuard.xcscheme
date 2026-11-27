@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme LastUpgradeVersion="1600" version="1.7">
+   <BuildAction parallelizeBuildables="YES" buildImplicitDependencies="YES">
+      <BuildActionEntries>
+         <BuildActionEntry buildForTesting="YES" buildForRunning="YES" buildForProfiling="YES" buildForArchiving="YES" buildForAnalyzing="YES">
+            <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="4256DD0C3EEA42E1B01B49CD" BuildableName="VoltGuard.app" BlueprintName="VoltGuard" ReferencedContainer="container:VoltGuard.xcodeproj"/>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction buildConfiguration="Debug" selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier="Xcode.DebuggerFoundation.Launcher.LLDB" shouldUseLaunchSchemeArgsEnv="YES">
+      <Testables>
+         <TestableReference skipped="NO">
+            <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="D6B5DC6A9B8B4B9BA027CD9A" BuildableName="VoltGuardTests.xctest" BlueprintName="VoltGuardTests" ReferencedContainer="container:VoltGuard.xcodeproj"/>
+         </TestableReference>
+      </Testables>
+   </TestAction>
+   <LaunchAction buildConfiguration="Debug" selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier="Xcode.DebuggerFoundation.Launcher.LLDB" launchStyle="0" useCustomWorkingDirectory="NO" ignoresPersistentStateOnLaunch="NO" debugDocumentVersioning="YES" allowLocationSimulation="YES">
+      <BuildableProductRunnable runnableDebuggingMode="0">
+         <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="4256DD0C3EEA42E1B01B49CD" BuildableName="VoltGuard.app" BlueprintName="VoltGuard" ReferencedContainer="container:VoltGuard.xcodeproj"/>
+      </BuildableProductRunnable>
+   </LaunchAction>
+</Scheme>

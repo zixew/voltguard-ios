@@ -1,0 +1,31 @@
+name: iOS CI
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test-and-build-ios:
+    runs-on: macos-26
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show Xcode and Swift environment
+        run: |
+          sw_vers
+          swift --version
+          xcodebuild -version
+
+      - name: Run SwiftPM Unit Tests
+        run: swift test
+
+      - name: Build VoltGuard iOS App and Core Targets
+        run: bash scripts/build_sim.sh

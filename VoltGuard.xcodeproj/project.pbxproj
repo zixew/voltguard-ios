@@ -1,0 +1,133 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		189677254BC94390B4EF06BA /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3DCBA191D4EAD97431FCD /* Entities.swift */; };
+		1E71C90169FA409CB20F9D12 /* ETACalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73A7BD4F62479DBDA39353 /* ETACalculator.swift */; };
+		6640C22C53E347889E670A66 /* VoltGuardiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37B035863E4B11BA4FC2B7 /* VoltGuardiOSApp.swift */; };
+		C4A940EA93934FA8900D5509 /* LocalBatteryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0BC807B87440138AF5FE26 /* LocalBatteryMonitor.swift */; };
+		D7256AA4F9364BD0977A069E /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48785B68B60343D186831884 /* AppConstants.swift */; };
+		E5E0ED3E736A4318990EEEDE /* BrandLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176202A6CC234B559DE0E493 /* BrandLogoView.swift */; };
+		7D290640DB62435F9CB55594 /* ThemePalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAA4C23B9014001AD5B8755 /* ThemePalette.swift */; };
+		AEC0CF8DBA704644A92FE373 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC514E2FEB2F45478E71BBFA /* Localization.swift */; };
+		93755A5400EF49C9AD981BB1 /* FluidBatteryWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38DB62A761D460A8DA19744 /* FluidBatteryWaveView.swift */; };
+		3E9250BBED814DCC9E6AB21A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631DFA8E01B4D49AA0983D6 /* DashboardView.swift */; };
+		1EA54D93F65D40038C087B63 /* VoltGuardAppEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D814905907C7403788F27E96 /* VoltGuardAppEntry.swift */; };
+		942D95449F2F4350B2A8EC7C /* VoltGuardiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E6D125EFEA42069D5099DD /* VoltGuardiOSTests.swift */; };
+		78390F38AACD45638EB63AB5 /* libVoltGuardDomain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C7701483754F57B800F1EB /* libVoltGuardDomain.a */; };
+		614655B347714ED088C692AB /* libVoltGuardDomain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C7701483754F57B800F1EB /* libVoltGuardDomain.a */; };
+		963307106351405B848AD5D8 /* libVoltGuardiOSCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D550365F3824E5598BF4C80 /* libVoltGuardiOSCore.a */; };
+		AEC4DAEBDAAA4E1E9DD79DD7 /* libVoltGuardDomain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C7701483754F57B800F1EB /* libVoltGuardDomain.a */; };
+		1B338810A38D4DFEBBAEC93F /* libVoltGuardiOSCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D550365F3824E5598BF4C80 /* libVoltGuardiOSCore.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		58B97888A7644701A2718B99 /* PBXContainerItemProxy */ = {isa = PBXContainerItemProxy; containerPortal = 7847ECF6C85B43C78BBCA339 /* Project object */; proxyType = 1; remoteGlobalIDString = 5DEF2C4C651E427584AF74AC; remoteInfo = VoltGuardDomain; };
+		C58A4A66C0A8478BB5ACC616 /* PBXContainerItemProxy */ = {isa = PBXContainerItemProxy; containerPortal = 7847ECF6C85B43C78BBCA339 /* Project object */; proxyType = 1; remoteGlobalIDString = 5DEF2C4C651E427584AF74AC; remoteInfo = VoltGuardDomain; };
+		5F27E8F4C11E4AC58563E647 /* PBXContainerItemProxy */ = {isa = PBXContainerItemProxy; containerPortal = 7847ECF6C85B43C78BBCA339 /* Project object */; proxyType = 1; remoteGlobalIDString = 23618FF0F56E46C2B292B9CC; remoteInfo = VoltGuardiOSCore; };
+		C8B324ED3A4F45CC88B720B0 /* PBXContainerItemProxy */ = {isa = PBXContainerItemProxy; containerPortal = 7847ECF6C85B43C78BBCA339 /* Project object */; proxyType = 1; remoteGlobalIDString = 4256DD0C3EEA42E1B01B49CD; remoteInfo = VoltGuard; };
+		141D887EC1E349EEB55AA2E0 /* PBXContainerItemProxy */ = {isa = PBXContainerItemProxy; containerPortal = 7847ECF6C85B43C78BBCA339 /* Project object */; proxyType = 1; remoteGlobalIDString = 5DEF2C4C651E427584AF74AC; remoteInfo = VoltGuardDomain; };
+		D55BD010DAA34A9DACF5BFB1 /* PBXContainerItemProxy */ = {isa = PBXContainerItemProxy; containerPortal = 7847ECF6C85B43C78BBCA339 /* Project object */; proxyType = 1; remoteGlobalIDString = 23618FF0F56E46C2B292B9CC; remoteInfo = VoltGuardiOSCore; };
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9EE3DCBA191D4EAD97431FCD /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Entities.swift"; path = "Sources/VoltGuardDomain/Entities.swift"; sourceTree = "<group>"; };
+		DA73A7BD4F62479DBDA39353 /* ETACalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ETACalculator.swift"; path = "Sources/VoltGuardDomain/ETACalculator.swift"; sourceTree = "<group>"; };
+		4D37B035863E4B11BA4FC2B7 /* VoltGuardiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "VoltGuardiOSApp.swift"; path = "Sources/VoltGuardiOS/App/VoltGuardiOSApp.swift"; sourceTree = "<group>"; };
+		4E0BC807B87440138AF5FE26 /* LocalBatteryMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LocalBatteryMonitor.swift"; path = "Sources/VoltGuardiOS/Services/LocalBatteryMonitor.swift"; sourceTree = "<group>"; };
+		48785B68B60343D186831884 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AppConstants.swift"; path = "Sources/VoltGuardiOS/UI/AppConstants.swift"; sourceTree = "<group>"; };
+		176202A6CC234B559DE0E493 /* BrandLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BrandLogoView.swift"; path = "Sources/VoltGuardiOS/UI/BrandLogoView.swift"; sourceTree = "<group>"; };
+		CFAA4C23B9014001AD5B8755 /* ThemePalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ThemePalette.swift"; path = "Sources/VoltGuardiOS/UI/ThemePalette.swift"; sourceTree = "<group>"; };
+		BC514E2FEB2F45478E71BBFA /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Localization.swift"; path = "Sources/VoltGuardiOS/UI/Localization.swift"; sourceTree = "<group>"; };
+		A38DB62A761D460A8DA19744 /* FluidBatteryWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FluidBatteryWaveView.swift"; path = "Sources/VoltGuardiOS/UI/FluidBatteryWaveView.swift"; sourceTree = "<group>"; };
+		8631DFA8E01B4D49AA0983D6 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DashboardView.swift"; path = "Sources/VoltGuardiOS/UI/DashboardView.swift"; sourceTree = "<group>"; };
+		D814905907C7403788F27E96 /* VoltGuardAppEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "VoltGuardAppEntry.swift"; path = "App/VoltGuardAppEntry.swift"; sourceTree = "<group>"; };
+		F705CA07227B40F1BB8BB2B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "App/Info.plist"; sourceTree = "<group>"; };
+		F6E6D125EFEA42069D5099DD /* VoltGuardiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "VoltGuardiOSTests.swift"; path = "Tests/VoltGuardiOSTests/VoltGuardiOSTests.swift"; sourceTree = "<group>"; };
+		70C7701483754F57B800F1EB /* libVoltGuardDomain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVoltGuardDomain.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D550365F3824E5598BF4C80 /* libVoltGuardiOSCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVoltGuardiOSCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B3F4B2D8A49452093C65A71 /* VoltGuard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoltGuard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFCFDB29ECC04909A717FAD8 /* VoltGuardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoltGuardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3242447055FE4D388E2EC495 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (78390F38AACD45638EB63AB5, ); runOnlyForDeploymentPostprocessing = 0; };
+		40A55AE55DCD478A8AE0D628 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (614655B347714ED088C692AB, 963307106351405B848AD5D8, ); runOnlyForDeploymentPostprocessing = 0; };
+		8867B7A5B9BB4CFC95640418 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (AEC4DAEBDAAA4E1E9DD79DD7, 1B338810A38D4DFEBBAEC93F, ); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D2CF1EB9899240E3AF8B9820 = {isa = PBXGroup; children = (9EE3DCBA191D4EAD97431FCD /* Entities.swift */, DA73A7BD4F62479DBDA39353 /* ETACalculator.swift */, 4D37B035863E4B11BA4FC2B7 /* VoltGuardiOSApp.swift */, 4E0BC807B87440138AF5FE26 /* LocalBatteryMonitor.swift */, 48785B68B60343D186831884 /* AppConstants.swift */, 176202A6CC234B559DE0E493 /* BrandLogoView.swift */, CFAA4C23B9014001AD5B8755 /* ThemePalette.swift */, BC514E2FEB2F45478E71BBFA /* Localization.swift */, A38DB62A761D460A8DA19744 /* FluidBatteryWaveView.swift */, 8631DFA8E01B4D49AA0983D6 /* DashboardView.swift */, D814905907C7403788F27E96 /* VoltGuardAppEntry.swift */, F705CA07227B40F1BB8BB2B4 /* Info.plist */, F6E6D125EFEA42069D5099DD /* VoltGuardiOSTests.swift */, 2DC367AB4E554ECCB16638B3 /* Products */); sourceTree = "<group>"; };
+		2DC367AB4E554ECCB16638B3 /* Products */ = {isa = PBXGroup; children = (70C7701483754F57B800F1EB, 9D550365F3824E5598BF4C80, 0B3F4B2D8A49452093C65A71, CFCFDB29ECC04909A717FAD8); name = Products; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5DEF2C4C651E427584AF74AC /* VoltGuardDomain */ = {isa = PBXNativeTarget; buildConfigurationList = 40E4387D5616499AB9082822; buildPhases = (B23C62D46121432B874C4100); buildRules = (); dependencies = (); name = VoltGuardDomain; productName = VoltGuardDomain; productReference = 70C7701483754F57B800F1EB; productType = "com.apple.product-type.library.static"; };
+		23618FF0F56E46C2B292B9CC /* VoltGuardiOSCore */ = {isa = PBXNativeTarget; buildConfigurationList = F8F32A99F26046B1BEB911DB; buildPhases = (6F5E2F3D2CF347F1B3912E1A, 3242447055FE4D388E2EC495); buildRules = (); dependencies = (82C38F8871684EC393A83FA0); name = VoltGuardiOSCore; productName = VoltGuardiOSCore; productReference = 9D550365F3824E5598BF4C80; productType = "com.apple.product-type.library.static"; };
+		4256DD0C3EEA42E1B01B49CD /* VoltGuard */ = {isa = PBXNativeTarget; buildConfigurationList = 19B17EFFDB47433A862F9867; buildPhases = (782969E07F4A4AC7B66DA7E5, 40A55AE55DCD478A8AE0D628, 4BE7F6D5B8604E7E9AC40AF4); buildRules = (); dependencies = (2FABC0F2DA2F4F0382257448, F72C127BFB7D42458BEE083A); name = VoltGuard; productName = VoltGuard; productReference = 0B3F4B2D8A49452093C65A71; productType = "com.apple.product-type.application"; };
+		D6B5DC6A9B8B4B9BA027CD9A /* VoltGuardTests */ = {isa = PBXNativeTarget; buildConfigurationList = 9BEAA33B008D41F088D2D50B; buildPhases = (F19F33889DB0462EA1931EEA, 8867B7A5B9BB4CFC95640418); buildRules = (); dependencies = (A7292F77DB10447E88E845CB, 4AD47EA7F0CE4526B9B743F5, 344EFE7B9A4748A4BA268C88); name = VoltGuardTests; productName = VoltGuardTests; productReference = CFCFDB29ECC04909A717FAD8; productType = "com.apple.product-type.bundle.unit-test"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7847ECF6C85B43C78BBCA339 /* Project object */ = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 1600; LastUpgradeCheck = 1600; TargetAttributes = { 4256DD0C3EEA42E1B01B49CD = { DevelopmentTeam = QK6DK6BBHP; ProvisioningStyle = Automatic; }; D6B5DC6A9B8B4B9BA027CD9A = { DevelopmentTeam = QK6DK6BBHP; ProvisioningStyle = Automatic; TestTargetID = 4256DD0C3EEA42E1B01B49CD; }; }; }; buildConfigurationList = 278F40C185364B9EAB2119B1; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base, ); mainGroup = D2CF1EB9899240E3AF8B9820; productRefGroup = 2DC367AB4E554ECCB16638B3; projectDirPath = ""; projectRoot = ""; targets = (5DEF2C4C651E427584AF74AC, 23618FF0F56E46C2B292B9CC, 4256DD0C3EEA42E1B01B49CD, D6B5DC6A9B8B4B9BA027CD9A); };
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4BE7F6D5B8604E7E9AC40AF4 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B23C62D46121432B874C4100 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (189677254BC94390B4EF06BA, 1E71C90169FA409CB20F9D12, ); runOnlyForDeploymentPostprocessing = 0; };
+		6F5E2F3D2CF347F1B3912E1A /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (6640C22C53E347889E670A66, C4A940EA93934FA8900D5509, D7256AA4F9364BD0977A069E, E5E0ED3E736A4318990EEEDE, 7D290640DB62435F9CB55594, AEC0CF8DBA704644A92FE373, 93755A5400EF49C9AD981BB1, 3E9250BBED814DCC9E6AB21A, ); runOnlyForDeploymentPostprocessing = 0; };
+		782969E07F4A4AC7B66DA7E5 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (1EA54D93F65D40038C087B63, ); runOnlyForDeploymentPostprocessing = 0; };
+		F19F33889DB0462EA1931EEA /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (942D95449F2F4350B2A8EC7C, ); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		82C38F8871684EC393A83FA0 /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = 5DEF2C4C651E427584AF74AC /* VoltGuardDomain */; targetProxy = 58B97888A7644701A2718B99 /* PBXContainerItemProxy */; };
+		2FABC0F2DA2F4F0382257448 /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = 5DEF2C4C651E427584AF74AC /* VoltGuardDomain */; targetProxy = C58A4A66C0A8478BB5ACC616 /* PBXContainerItemProxy */; };
+		F72C127BFB7D42458BEE083A /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = 23618FF0F56E46C2B292B9CC /* VoltGuardiOSCore */; targetProxy = 5F27E8F4C11E4AC58563E647 /* PBXContainerItemProxy */; };
+		A7292F77DB10447E88E845CB /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = 4256DD0C3EEA42E1B01B49CD /* VoltGuard */; targetProxy = C8B324ED3A4F45CC88B720B0 /* PBXContainerItemProxy */; };
+		4AD47EA7F0CE4526B9B743F5 /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = 5DEF2C4C651E427584AF74AC /* VoltGuardDomain */; targetProxy = 141D887EC1E349EEB55AA2E0 /* PBXContainerItemProxy */; };
+		344EFE7B9A4748A4BA268C88 /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = 23618FF0F56E46C2B292B9CC /* VoltGuardiOSCore */; targetProxy = D55BD010DAA34A9DACF5BFB1 /* PBXContainerItemProxy */; };
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7C89AD385676411A8F285618 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = { ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2"; ENABLE_TESTABILITY = YES; ONLY_ACTIVE_ARCH = YES; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; }; name = Debug; };
+		CD6E19C12448404EA22AF139 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2"; SWIFT_OPTIMIZATION_LEVEL = "-O"; }; name = Release; };
+		8990863AEA4F4E728AC93BAF = {isa = XCBuildConfiguration; buildSettings = { PRODUCT_MODULE_NAME = VoltGuardDomain; PRODUCT_NAME = VoltGuardDomain; SKIP_INSTALL = YES; }; name = Debug; };
+		89C4239270304896833F03F7 = {isa = XCBuildConfiguration; buildSettings = { PRODUCT_MODULE_NAME = VoltGuardDomain; PRODUCT_NAME = VoltGuardDomain; SKIP_INSTALL = YES; }; name = Release; };
+		511A717A49DD4407B1472E9A = {isa = XCBuildConfiguration; buildSettings = { PRODUCT_MODULE_NAME = VoltGuardiOSCore; PRODUCT_NAME = VoltGuardiOSCore; SKIP_INSTALL = YES; }; name = Debug; };
+		AC14F044965A40B9A8CEDD10 = {isa = XCBuildConfiguration; buildSettings = { PRODUCT_MODULE_NAME = VoltGuardiOSCore; PRODUCT_NAME = VoltGuardiOSCore; SKIP_INSTALL = YES; }; name = Release; };
+		974C3A6C7C8E49A1854BBB82 = {isa = XCBuildConfiguration; buildSettings = { CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 2; DEVELOPMENT_TEAM = QK6DK6BBHP; ENABLE_TESTING_SEARCH_PATHS = YES; INFOPLIST_FILE = App/Info.plist; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks"); MARKETING_VERSION = 1.1.0; PRODUCT_BUNDLE_IDENTIFIER = id.zixew.voltguard.ios; PRODUCT_NAME = VoltGuard; SWIFT_EMIT_LOC_STRINGS = YES; }; name = Debug; };
+		B64CAADA3A8C466BA2755F59 = {isa = XCBuildConfiguration; buildSettings = { CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 2; DEVELOPMENT_TEAM = QK6DK6BBHP; ENABLE_TESTING_SEARCH_PATHS = YES; INFOPLIST_FILE = App/Info.plist; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks"); MARKETING_VERSION = 1.1.0; PRODUCT_BUNDLE_IDENTIFIER = id.zixew.voltguard.ios; PRODUCT_NAME = VoltGuard; SWIFT_EMIT_LOC_STRINGS = YES; }; name = Release; };
+		ED4F8C262C9B48FF89779362 = {isa = XCBuildConfiguration; buildSettings = { BUNDLE_LOADER = "$(TEST_HOST)"; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; DEVELOPMENT_TEAM = QK6DK6BBHP; GENERATE_INFOPLIST_FILE = YES; PRODUCT_BUNDLE_IDENTIFIER = id.zixew.voltguard.ios.tests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_ACTIVE_COMPILATION_CONDITIONS = TESTING; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoltGuard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VoltGuard"; }; name = Debug; };
+		E2DCC92B902E4D48AB391124 = {isa = XCBuildConfiguration; buildSettings = { BUNDLE_LOADER = "$(TEST_HOST)"; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; DEVELOPMENT_TEAM = QK6DK6BBHP; GENERATE_INFOPLIST_FILE = YES; PRODUCT_BUNDLE_IDENTIFIER = id.zixew.voltguard.ios.tests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_ACTIVE_COMPILATION_CONDITIONS = TESTING; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoltGuard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VoltGuard"; }; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		278F40C185364B9EAB2119B1 = {isa = XCConfigurationList; buildConfigurations = (7C89AD385676411A8F285618, CD6E19C12448404EA22AF139); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+		40E4387D5616499AB9082822 = {isa = XCConfigurationList; buildConfigurations = (8990863AEA4F4E728AC93BAF, 89C4239270304896833F03F7); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+		F8F32A99F26046B1BEB911DB = {isa = XCConfigurationList; buildConfigurations = (511A717A49DD4407B1472E9A, AC14F044965A40B9A8CEDD10); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+		19B17EFFDB47433A862F9867 = {isa = XCConfigurationList; buildConfigurations = (974C3A6C7C8E49A1854BBB82, B64CAADA3A8C466BA2755F59); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+		9BEAA33B008D41F088D2D50B = {isa = XCConfigurationList; buildConfigurations = (ED4F8C262C9B48FF89779362, E2DCC92B902E4D48AB391124); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+/* End XCConfigurationList section */
+	};
+	rootObject = 7847ECF6C85B43C78BBCA339 /* Project object */;
+}
