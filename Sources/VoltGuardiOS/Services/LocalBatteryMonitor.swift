@@ -447,50 +447,49 @@ public final class VoltGuardiOSStore: ObservableObject {
     }
 
     private nonisolated static func fetchLatestGitHubRelease() async -> iOSUpdateCheckResult {
-        guard let url = URL(string: iOSReleaseInfo.latestReleaseAPI) else {
+        guard let url = URL(string: iOSReleaseInfo.feedURL) else {
             return iOSUpdateCheckResult(
                 currentVersion: iOSReleaseInfo.currentVersion,
                 latestVersion: iOSReleaseInfo.currentVersion,
-                isUpdateAvailable: false,
-                releaseURL: iOSReleaseInfo.releasesWebURL,
-                releaseNotes: ""
+                isUpdateAvailable: false
             )
         }
 
-        var request = URLRequest(url: url, timeoutInterval: 10)
-        request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
+        var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("VoltGuard-iOS/\(iOSReleaseInfo.currentVersion)", forHTTPHeaderField: "User-Agent")
 
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
             guard let http = response as? HTTPURLResponse, (200..<300).contains(http.statusCode),
                   let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-                  let tagName = json["tag_name"] as? String else {
+                  let version = json["version"] as? String else {
                 return iOSUpdateCheckResult(
                     currentVersion: iOSReleaseInfo.currentVersion,
                     latestVersion: iOSReleaseInfo.currentVersion,
-                    isUpdateAvailable: false,
-                    releaseURL: iOSReleaseInfo.releasesWebURL,
-                    releaseNotes: ""
+                    isUpdateAvailable: false
                 )
             }
-            let latest = tagName.trimmingCharacters(in: CharacterSet(charactersIn: "vV"))
-            let htmlURL = (json["html_url"] as? String) ?? iOSReleaseInfo.releasesWebURL
-            let body = (json["body"] as? String) ?? ""
+            let latest = version.trimmingCharacters(in: CharacterSet(charactersIn: "vV "))
+            let build = (json["build"] as? String) ?? iOSReleaseInfo.buildNumber
+            let publishedAt = (json["publishedAt"] as? String) ?? iOSReleaseInfo.latestPublishedDate
             return iOSUpdateCheckResult(
                 currentVersion: iOSReleaseInfo.currentVersion,
                 latestVersion: latest,
+                latestBuild: build,
+                publishedAt: publishedAt,
                 isUpdateAvailable: iOSReleaseInfo.isNewerVersion(latest, than: iOSReleaseInfo.currentVersion),
-                releaseURL: htmlURL,
-                releaseNotes: body
+                updatePageURL: iOSReleaseInfo.websiteURL,
+                latestChangesEN: (json["changesEN"] as? [String]) ?? iOSReleaseInfo.latestChangesEN,
+                latestFixesEN: (json["fixesEN"] as? [String]) ?? iOSReleaseInfo.latestFixesEN,
+                latestChangesID: (json["changesID"] as? [String]) ?? iOSReleaseInfo.latestChangesID,
+                latestFixesID: (json["fixesID"] as? [String]) ?? iOSReleaseInfo.latestFixesID
             )
         } catch {
             return iOSUpdateCheckResult(
                 currentVersion: iOSReleaseInfo.currentVersion,
                 latestVersion: iOSReleaseInfo.currentVersion,
-                isUpdateAvailable: false,
-                releaseURL: iOSReleaseInfo.releasesWebURL,
-                releaseNotes: ""
+                isUpdateAvailable: false
             )
         }
     }

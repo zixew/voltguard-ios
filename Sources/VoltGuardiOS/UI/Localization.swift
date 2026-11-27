@@ -121,13 +121,16 @@ public enum L10nKey: String, CaseIterable, Sendable {
     case thermalSafeAdvice
     case thermalWarnAdvice
     case thermalCoolAdvice
+    case tabUpdates
     case appUpdatesTitle
     case checkUpdatesButton
     case checkingUpdates
     case updateAvailableBanner
     case upToDateBanner
-    case changelogLogTitle
-    case openReleasesPage
+    case updatesWhatsNewSection
+    case updatesFixesSection
+    case updatesCleanHint
+    case openDownloadPage
 }
 
 public struct L10n {
@@ -258,13 +261,16 @@ public struct L10n {
         .thermalSafeAdvice: "Battery thermal envelope is healthy. Optimal efficiency during charge and everyday tasks.",
         .thermalWarnAdvice: "Device is warming up. Remove thick cases or pause fast charging briefly to protect cell longevity.",
         .thermalCoolAdvice: "High heat detected! Unplug charger or move away from direct sunlight so iOS stops throttling.",
-        .appUpdatesTitle: "Version, Releases & Changelog",
-        .checkUpdatesButton: "Check Updates",
-        .checkingUpdates: "Checking GitHub...",
-        .updateAvailableBanner: "New version available: v%@",
-        .upToDateBanner: "Up to date (v%@)",
-        .changelogLogTitle: "Release Changelog",
-        .openReleasesPage: "GitHub Releases"
+        .tabUpdates: "Updates",
+        .appUpdatesTitle: "Software Update",
+        .checkUpdatesButton: "Check for Updates",
+        .checkingUpdates: "Checking for updates...",
+        .updateAvailableBanner: "Update Ready: v%@",
+        .upToDateBanner: "VoltGuard is up to date (v%@)",
+        .updatesWhatsNewSection: "Changes in v%@",
+        .updatesFixesSection: "Fixes in v%@",
+        .updatesCleanHint: "Shows only changes and bug fixes for the latest release.",
+        .openDownloadPage: "Open Download Page"
     ]
 
     public static let id: [L10nKey: String] = [
@@ -387,13 +393,16 @@ public struct L10n {
         .thermalSafeAdvice: "Suhu baterai sehat dan sejuk. Efisiensi optimal untuk mengisi daya maupun aktivitas harian.",
         .thermalWarnAdvice: "Perangkat mulai hangat. Lepas casing tebal atau jeda sebentar pengisian cepat agar sel baterai awet.",
         .thermalCoolAdvice: "Suhu tinggi terdeteksi! Cabut charger atau hindari panas langsung agar iOS berhenti throttle.",
-        .appUpdatesTitle: "Versi, Rilis & Log Update",
-        .checkUpdatesButton: "Cek Update",
-        .checkingUpdates: "Memeriksa GitHub...",
-        .updateAvailableBanner: "Versi baru tersedia: v%@",
-        .upToDateBanner: "Sudah versi terbaru (v%@)",
-        .changelogLogTitle: "Riwayat Perubahan (Changelog)",
-        .openReleasesPage: "Rilis GitHub"
+        .tabUpdates: "Pembaruan",
+        .appUpdatesTitle: "Pembaruan Aplikasi",
+        .checkUpdatesButton: "Cek Pembaruan",
+        .checkingUpdates: "Memeriksa pembaruan...",
+        .updateAvailableBanner: "Pembaruan Tersedia: v%@",
+        .upToDateBanner: "VoltGuard versi terbaru (v%@)",
+        .updatesWhatsNewSection: "Perubahan di v%@",
+        .updatesFixesSection: "Perbaikan di v%@",
+        .updatesCleanHint: "Hanya menampilkan perubahan dan perbaikan versi terbaru.",
+        .openDownloadPage: "Buka Halaman Unduh"
     ]
 }
 

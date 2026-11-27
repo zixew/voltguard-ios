@@ -423,24 +423,39 @@ public struct iOSReleaseChangelogEntry: Codable, Equatable, Identifiable, Sendab
 public struct iOSUpdateCheckResult: Equatable, Sendable {
     public let currentVersion: String
     public let latestVersion: String
+    public let latestBuild: String
+    public let publishedAt: String
     public let isUpdateAvailable: Bool
-    public let releaseURL: String
-    public let releaseNotes: String
+    public let updatePageURL: String
+    public let latestChangesEN: [String]
+    public let latestFixesEN: [String]
+    public let latestChangesID: [String]
+    public let latestFixesID: [String]
     public let checkedAt: Date
 
     public init(
         currentVersion: String,
         latestVersion: String,
+        latestBuild: String = iOSReleaseInfo.buildNumber,
+        publishedAt: String = iOSReleaseInfo.latestPublishedDate,
         isUpdateAvailable: Bool,
-        releaseURL: String,
-        releaseNotes: String,
+        updatePageURL: String = iOSReleaseInfo.websiteURL,
+        latestChangesEN: [String] = iOSReleaseInfo.latestChangesEN,
+        latestFixesEN: [String] = iOSReleaseInfo.latestFixesEN,
+        latestChangesID: [String] = iOSReleaseInfo.latestChangesID,
+        latestFixesID: [String] = iOSReleaseInfo.latestFixesID,
         checkedAt: Date = Date()
     ) {
         self.currentVersion = currentVersion
         self.latestVersion = latestVersion
+        self.latestBuild = latestBuild
+        self.publishedAt = publishedAt
         self.isUpdateAvailable = isUpdateAvailable
-        self.releaseURL = releaseURL
-        self.releaseNotes = releaseNotes
+        self.updatePageURL = updatePageURL
+        self.latestChangesEN = latestChangesEN
+        self.latestFixesEN = latestFixesEN
+        self.latestChangesID = latestChangesID
+        self.latestFixesID = latestFixesID
         self.checkedAt = checkedAt
     }
 }
@@ -448,53 +463,38 @@ public struct iOSUpdateCheckResult: Equatable, Sendable {
 public enum iOSReleaseInfo {
     public static let currentVersion = "1.2.0"
     public static let buildNumber = "3"
-    public static let githubRepo = "zixew/voltguard-ios"
-    public static let latestReleaseAPI = "https://api.github.com/repos/zixew/voltguard-ios/releases/latest"
-    public static let releasesWebURL = "https://github.com/zixew/voltguard-ios/releases"
-    public static let websiteURL = "https://zixew.github.io/voltguard/"
+    public static let latestPublishedDate = "2026-11-27"
+    public static let websiteURL = "https://voltguard-mocha.vercel.app"
+    public static let feedURL = "https://voltguard-mocha.vercel.app/appcast.json"
+
+    public static let latestChangesEN: [String] = [
+        "Interactive animated Thermal Zone card with inline Thermal Alert switch and cooling guidance",
+        "Dedicated Software Updates tab displaying latest version changes and fixes"
+    ]
+
+    public static let latestFixesEN: [String] = [
+        "Replaced deprecated SwiftUI onChange and Text.foregroundColor modifiers for iOS 17 - 26",
+        "Improved feature parity alignment with VoltGuard Desktop v1.2.0"
+    ]
+
+    public static let latestChangesID: [String] = [
+        "Kartu Thermal Zone interaktif beranimasi dengan toggle Thermal Alert langsung & panduan pendinginan",
+        "Tab Pembaruan Aplikasi tersendiri berisi daftar perubahan & perbaikan versi terbaru"
+    ]
+
+    public static let latestFixesID: [String] = [
+        "Upgrade modifier deprecated SwiftUI onChange dan Text.foregroundColor untuk iOS 17 - 26",
+        "Penyelarasan fitur penuh dengan VoltGuard Desktop v1.2.0"
+    ]
 
     public static let changelog: [iOSReleaseChangelogEntry] = [
         iOSReleaseChangelogEntry(
             version: "1.2.0",
             date: "2026-11-27",
-            titleEN: "Interactive Thermal Zone, Parity Refresh & Update Log",
-            titleID: "Thermal Zone Interaktif, Paritas Desktop & Log Update",
-            highlightsEN: [
-                "Added interactive animated Thermal Zone card with inline Thermal Alert switch and cooling guidance",
-                "Added In-App Version (v1.2.0), GitHub Release update check, and localized Release Changelog UI",
-                "Aligned feature parity with VoltGuard Desktop v1.2.0"
-            ],
-            highlightsID: [
-                "Kartu Thermal Zone interaktif beranimasi dengan toggle Thermal Alert langsung & panduan pendinginan",
-                "Info Versi (v1.2.0), cek rilis GitHub terbaru, dan UI Log Update dwibahasa",
-                "Penyelarasan fitur dengan VoltGuard Desktop v1.2.0"
-            ]
-        ),
-        iOSReleaseChangelogEntry(
-            version: "1.1.0",
-            date: "2026-11-27",
-            titleEN: "One-Time Auto Compatibility & iPhone 12 Device Verification",
-            titleID: "Auto-Cek Kompatibilitas 1x & Verifikasi Real Device iPhone 12",
-            highlightsEN: [
-                "Cached 1x compatibility fingerprint automatically disables unsupported iOS sandbox controls",
-                "Added comprehensive iOS 16 - 26 simulator and iPhone 12 hardware validation"
-            ],
-            highlightsID: [
-                "Cek kompatibilitas 1x tersimpan otomatis menonaktifkan kontrol di luar sandbox iOS",
-                "Validasi lengkap simulator iOS 16 - 26 dan real device iPhone 12"
-            ]
-        ),
-        iOSReleaseChangelogEntry(
-            version: "1.0.0",
-            date: "2026-11-26",
-            titleEN: "Initial iOS Companion Release",
-            titleID: "Rilis Perdana Pendamping iOS",
-            highlightsEN: [
-                "Real-time battery % & ETA, target charge & thermal alerts, Sailing reminder, and 4 shared themes"
-            ],
-            highlightsID: [
-                "Monitor % & ETA baterai real-time, alarm batas daya & panas, pengingat Sailing, dan 4 tema"
-            ]
+            titleEN: "What's New & Fixes in v1.2.0",
+            titleID: "Perubahan & Perbaikan Versi 1.2.0",
+            highlightsEN: latestChangesEN + latestFixesEN,
+            highlightsID: latestChangesID + latestFixesID
         )
     ]
 

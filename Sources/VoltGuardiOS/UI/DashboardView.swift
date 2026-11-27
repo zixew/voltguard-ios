@@ -49,6 +49,10 @@ public struct DashboardView: View {
                     systemTab(palette: palette, locale: locale)
                         .tabItem { Label(L10n.text(.tabSystem, locale: locale), systemImage: "gearshape.2.fill") }
                         .tag(4)
+
+                    updatesTab(palette: palette, locale: locale)
+                        .tabItem { Label(L10n.text(.tabUpdates, locale: locale), systemImage: "arrow.down.circle.fill") }
+                        .tag(5)
                 }
                 .tint(palette.accent)
             }
@@ -719,19 +723,35 @@ public struct DashboardView: View {
                             .foregroundStyle(palette.accent)
                     }
                 }
+            }
+            .padding()
+        }
+    }
 
+    // MARK: - 6. Dedicated Updates Tab
+    @ViewBuilder
+    private func updatesTab(palette: ThemePalette, locale: AppLocale) -> some View {
+        let latest = store.updateResult
+        let activeVersion = latest?.latestVersion ?? iOSReleaseInfo.currentVersion
+        let activeDate = latest?.publishedAt ?? iOSReleaseInfo.latestPublishedDate
+        let changes = locale == .id
+            ? (latest?.latestChangesID ?? iOSReleaseInfo.latestChangesID)
+            : (latest?.latestChangesEN ?? iOSReleaseInfo.latestChangesEN)
+        let fixes = locale == .id
+            ? (latest?.latestFixesID ?? iOSReleaseInfo.latestFixesID)
+            : (latest?.latestFixesEN ?? iOSReleaseInfo.latestFixesEN)
+
+        ScrollView {
+            VStack(spacing: 16) {
                 cardContainer(palette: palette) {
-                    Text(L10n.text(.appUpdatesTitle, locale: locale))
-                        .font(.headline)
-                        .foregroundStyle(palette.primaryText)
-
-                    HStack {
+                    HStack(spacing: 12) {
+                        BrandLogoView(size: 38, accentColor: palette.accent)
                         VStack(alignment: .leading, spacing: 2) {
-                            Text("VoltGuard iOS v\(iOSReleaseInfo.currentVersion) (Build \(iOSReleaseInfo.buildNumber))")
-                                .font(.subheadline.weight(.semibold).monospacedDigit())
+                            Text(L10n.text(.appUpdatesTitle, locale: locale))
+                                .font(.headline)
                                 .foregroundStyle(palette.primaryText)
-                            Text(iOSReleaseInfo.githubRepo)
-                                .font(.caption2.monospaced())
+                            Text("VoltGuard iOS v\(iOSReleaseInfo.currentVersion) (Build \(iOSReleaseInfo.buildNumber))")
+                                .font(.caption.monospacedDigit())
                                 .foregroundStyle(palette.secondaryText)
                         }
                         Spacer()
@@ -750,7 +770,7 @@ public struct DashboardView: View {
                         .disabled(store.isCheckingUpdates)
                     }
 
-                    if let update = store.updateResult {
+                    if let update = latest {
                         HStack(spacing: 8) {
                             Image(systemName: update.isUpdateAvailable ? "arrow.down.circle.fill" : "checkmark.circle.fill")
                                 .foregroundStyle(update.isUpdateAvailable ? palette.warning : palette.accent)
@@ -760,60 +780,75 @@ public struct DashboardView: View {
                                     update.latestVersion
                                 )
                             )
-                            .font(.caption.weight(.semibold))
+                            .font(.subheadline.weight(.semibold))
                             .foregroundStyle(palette.primaryText)
                             Spacer()
-                            if let url = URL(string: update.releaseURL) {
-                                Link(L10n.text(.openReleasesPage, locale: locale), destination: url)
+                            if update.isUpdateAvailable, let url = URL(string: update.updatePageURL) {
+                                Link(L10n.text(.openDownloadPage, locale: locale), destination: url)
                                     .font(.caption.weight(.semibold))
                             }
                         }
-                        .padding(8)
+                        .padding(10)
                         .background((update.isUpdateAvailable ? palette.warning : palette.accent).opacity(0.12))
                         .clipShape(RoundedRectangle(cornerRadius: 8))
                     }
 
-                    Divider()
-
-                    Text(L10n.text(.changelogLogTitle, locale: locale))
-                        .font(.caption.weight(.semibold))
+                    Text(L10n.text(.updatesCleanHint, locale: locale))
+                        .font(.caption)
                         .foregroundStyle(palette.secondaryText)
+                }
 
-                    ForEach(iOSReleaseInfo.changelog) { entry in
-                        let isCurrent = entry.version == iOSReleaseInfo.currentVersion
-                        let title = locale == .id ? entry.titleID : entry.titleEN
-                        let highlights = locale == .id ? entry.highlightsID : entry.highlightsEN
-                        VStack(alignment: .leading, spacing: 4) {
-                            HStack {
-                                Text("v\(entry.version)")
-                                    .font(.caption.bold().monospacedDigit())
-                                    .padding(.horizontal, 6)
-                                    .padding(.vertical, 2)
-                                    .background((isCurrent ? palette.accent : palette.secondaryText).opacity(0.16))
-                                    .foregroundStyle(isCurrent ? palette.accent : palette.secondaryText)
-                                    .clipShape(Capsule())
-                                Text(title)
-                                    .font(.caption.weight(.semibold))
-                                    .foregroundStyle(palette.primaryText)
-                                Spacer()
-                                Text(entry.date)
-                                    .font(.caption2.monospaced())
+                cardContainer(palette: palette) {
+                    HStack {
+                        Text(String(format: L10n.text(.updatesWhatsNewSection, locale: locale), activeVersion))
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(palette.primaryText)
+                        Spacer()
+                        Text(activeDate)
+                            .font(.caption2.monospaced())
+                            .foregroundStyle(palette.secondaryText)
+                    }
+
+                    ForEach(Array(changes.enumerated()), id: \.offset) { _, line in
+                        HStack(alignment: .top, spacing: 8) {
+                            Image(systemName: "plus.circle.fill")
+                                .font(.caption)
+                                .foregroundStyle(palette.accent)
+                                .padding(.top, 2)
+                            Text(line)
+                                .font(.caption)
+                                .foregroundStyle(palette.primaryText)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                    }
+
+                    if !fixes.isEmpty {
+                        Divider()
+                        Text(String(format: L10n.text(.updatesFixesSection, locale: locale), activeVersion))
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(palette.primaryText)
+
+                        ForEach(Array(fixes.enumerated()), id: \.offset) { _, line in
+                            HStack(alignment: .top, spacing: 8) {
+                                Image(systemName: "wrench.and.screwdriver.fill")
+                                    .font(.caption)
+                                    .foregroundStyle(palette.warning)
+                                    .padding(.top, 2)
+                                Text(line)
+                                    .font(.caption)
                                     .foregroundStyle(palette.secondaryText)
-                            }
-                            ForEach(Array(highlights.enumerated()), id: \.offset) { _, line in
-                                Text("* \(line)")
-                                    .font(.caption2)
-                                    .foregroundStyle(palette.secondaryText)
+                                    .fixedSize(horizontal: false, vertical: true)
                             }
                         }
-                        .padding(8)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(palette.background.opacity(0.5))
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
                     }
                 }
             }
             .padding()
+        }
+        .onAppear {
+            if store.updateResult == nil && !store.isCheckingUpdates {
+                store.checkForUpdates()
+            }
         }
     }
 
