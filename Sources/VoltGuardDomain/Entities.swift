@@ -469,12 +469,12 @@ public enum iOSReleaseInfo {
 
     public static let latestChangesEN: [String] = [
         "Interactive animated Thermal Zone card with inline Thermal Alert switch and cooling guidance",
-        "Dedicated Software Updates tab displaying latest version changes and fixes"
+        "Dedicated Software Updates tab showing only latest version changes and fixes"
     ]
 
     public static let latestFixesEN: [String] = [
-        "Replaced deprecated SwiftUI onChange and Text.foregroundColor modifiers for iOS 17 - 26",
-        "Improved feature parity alignment with VoltGuard Desktop v1.2.0"
+        "Smooth system compatibility for iOS 16 through 26 devices",
+        "Feature parity alignment with VoltGuard Desktop 1.2.0"
     ]
 
     public static let latestChangesID: [String] = [
@@ -483,8 +483,8 @@ public enum iOSReleaseInfo {
     ]
 
     public static let latestFixesID: [String] = [
-        "Upgrade modifier deprecated SwiftUI onChange dan Text.foregroundColor untuk iOS 17 - 26",
-        "Penyelarasan fitur penuh dengan VoltGuard Desktop v1.2.0"
+        "Kompatibilitas penuh untuk iPhone & iPad iOS 16 hingga 26",
+        "Penyelarasan fitur penuh dengan VoltGuard Desktop 1.2.0"
     ]
 
     public static let changelog: [iOSReleaseChangelogEntry] = [
