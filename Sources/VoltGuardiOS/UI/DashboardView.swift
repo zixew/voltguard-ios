@@ -79,7 +79,7 @@ public struct DashboardView: View {
             }
             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
-            .onChange(of: selectedPhotoItem) { newItem in
+            .compatOnChange(of: selectedPhotoItem) { newItem in
                 guard let newItem else { return }
                 Task {
                     if let data = try? await newItem.loadTransferable(type: Data.self) {

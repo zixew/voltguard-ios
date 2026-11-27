@@ -10,6 +10,27 @@ public extension View {
             self
         }
     }
+
+    @ViewBuilder
+    func compatOnChange<V: Equatable>(of value: V, perform action: @escaping (V) -> Void) -> some View {
+        if #available(iOS 17.0, macOS 14.0, *) {
+            self.onChange(of: value) { _, newValue in
+                action(newValue)
+            }
+        } else {
+            self.onChange(of: value, perform: action)
+        }
+    }
+}
+
+public extension Text {
+    func compatTextColor(_ color: Color) -> Text {
+        if #available(iOS 17.0, macOS 14.0, *) {
+            return self.foregroundStyle(color)
+        } else {
+            return self.foregroundColor(color)
+        }
+    }
 }
 
 public enum BatteryVisualMode: Equatable {
@@ -247,7 +268,7 @@ public struct LiquidBatteryCellView: View {
         if limitPercent < VoltGuardiOSLimits.maxLimitPercent {
             let tag = Text("\(limitPercent)%")
                 .font(.system(size: 8, weight: .bold, design: .monospaced))
-                .foregroundColor(palette.primaryText.opacity(0.85))
+                .compatTextColor(palette.primaryText.opacity(0.85))
             layer.draw(tag, at: CGPoint(x: innerRect.maxX - 13, y: max(limitY - 7, innerRect.minY + 6)))
         }
     }
